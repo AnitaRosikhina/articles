@@ -1,5 +1,8 @@
 <div class="container">
-  <app-filter></app-filter>
-  <app-total-count></app-total-count>
-  <app-card></app-card>
+  <div class="container__filter">
+    <app-filter/>
+  </div>
+  <app-total-count [count]="1"/>
+  <mat-divider></mat-divider>
+  <app-card/>
 </div>
