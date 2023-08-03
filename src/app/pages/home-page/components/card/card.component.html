@@ -11,7 +11,10 @@
       <mat-icon>calendar_today</mat-icon>
       {{item.published_at | date:'MMMM d, yyyy'}}
     </p>
-    <p class="card__content__title">
+    <p
+      class="card__content__title"
+      [title]="item.title"
+    >
       {{item.title}}
     </p>
     <p class="card__content__description">

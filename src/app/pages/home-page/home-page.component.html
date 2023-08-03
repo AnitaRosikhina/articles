@@ -5,9 +5,11 @@
   <app-total-count [count]="count$ | async"/>
   <mat-divider></mat-divider>
   <div class="container__results">
-    <app-card
+    <div
+      class="container__results__card-wrapper"
       *ngFor="let item of articles$ | async"
-      [item]="item"
-    />
+    >
+      <app-card [item]="item"/>
+    </div>
   </div>
 </div>

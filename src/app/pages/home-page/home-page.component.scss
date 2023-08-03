@@ -11,5 +11,9 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 45px;
+
+    &__card-wrapper {
+      margin: 22px 0;
+    }
   }
 }
