@@ -9,4 +9,10 @@ import { Articles } from "../../../../interfaces/acticles";
 })
 export class CardComponent {
   @Input() item!: Articles.Item;
+
+  readonly MAX_SUMMARY_LENGTH = 100;
+
+  get continuationSign(): string {
+    return this.item.summary.length > this.MAX_SUMMARY_LENGTH ? '...' : '';
+  }
 }
