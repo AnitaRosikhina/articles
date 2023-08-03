@@ -1,10 +1,13 @@
 <div class="container">
   <div class="container__filter">
-    <app-filter/>
+    <app-filter (filter)="filter($event)"/>
   </div>
-  <app-total-count [count]="1"/>
+  <app-total-count [count]="count$ | async"/>
   <mat-divider></mat-divider>
   <div class="container__results">
-    <app-card/>
+    <app-card
+      *ngFor="let item of articles$ | async"
+      [item]="item"
+    />
   </div>
 </div>

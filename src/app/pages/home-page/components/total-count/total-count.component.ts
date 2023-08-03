@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TotalCountComponent {
-  @Input() count?: number;
+  @Input() count?: number | null;
 }

@@ -1,9 +1,6 @@
 import { HomePageState } from "../interfaces/home-page";
 import { createSelector } from "@ngrx/store";
-
-interface AppState {
-  homePage: HomePageState;
-}
+import { AppState } from "../../../interfaces/store";
 
 export const selectHomePage = (state: AppState) => state.homePage;
 

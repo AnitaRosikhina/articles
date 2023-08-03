@@ -7,7 +7,7 @@ export const getArticles = createAction(
 
 export const getArticlesSuccess = createAction(
   '[Home Page] Get Articles Success',
-  props<Articles.Response>()
+  props<{ count: number, articles: Articles.Item[] }>()
 );
 export const getArticlesError = createAction(
   '[Home Page] Get Articles Error'

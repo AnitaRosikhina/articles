@@ -11,6 +11,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { HomePageEffects } from "./pages/home-page/store/home-page.effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { ArticlesService } from "./services/articles.service";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,10 @@ import { ArticlesService } from "./services/articles.service";
     HomePageComponent,
     StoreModule.forRoot({ homePage: homePageReducer }),
     EffectsModule.forRoot([HomePageEffects]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    })
   ],
   providers: [ArticlesService],
   bootstrap: [AppComponent]
