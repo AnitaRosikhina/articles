@@ -1,1 +1,27 @@
-<p>card works!</p>
+<mat-card class="card">
+  <img
+    class="card__img"
+    mat-card-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu">
+  <mat-card-content class="card__content">
+    <p class="card__content__date">
+      <!-- TODO: download the calendar icon-->
+      <mat-icon>calendar_today</mat-icon> June 29th, 2021
+    </p>
+    <p class="card__content__title">
+      The 2020 World's Most Valuable Brands
+    </p>
+    <p class="card__content__description">
+      Non sed molestie tortor massa vitae in mattis. Eget vel consequat hendrerit commodo libero aliquam. Urna arcu nunc
+      tortor vitae pharetra...
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="card__actions">
+    <button class="card__actions__btn" mat-button>
+      Read more
+      <!-- TODO: matSuffix doesn't work-->
+      <mat-icon matButtonIcon matSuffix>arrow_right</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

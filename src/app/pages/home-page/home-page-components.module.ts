@@ -4,6 +4,8 @@ import { TotalCountComponent } from './components/total-count/total-count.compon
 import { CardComponent } from './components/card/card.component';
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { MatIconModule } from "@angular/material/icon";
   ],
   imports: [
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class HomePageComponentsModule { }

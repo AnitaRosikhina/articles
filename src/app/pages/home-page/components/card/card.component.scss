@@ -1,0 +1,48 @@
+.card {
+  width: 400px;
+
+  &__img {
+    height: 217px;
+    object-fit: cover;
+    margin-bottom: 25px;
+  }
+
+  &__content {
+    padding: 0 25px;
+
+    &__date {
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      color: #363636;
+      margin-bottom: 25px;
+      line-height: 21px;
+    }
+
+    &__title {
+      // TODO: use global styles for FF
+      font-family: Montserrat, sans-serif;
+      font-size: 24px;
+      color: #363636;
+      margin-bottom: 20px;
+      line-height: 29.26px;
+    }
+
+    &__description {
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #363636;
+    }
+  }
+
+  &__actions {
+    padding: 0 25px 25px;
+
+    &__btn {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+}
