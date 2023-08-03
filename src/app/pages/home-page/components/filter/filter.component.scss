@@ -1,0 +1,15 @@
+.filter {
+  &__label {
+    font-family: Montserrat;
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    // TODO add scss variables & mixins
+  }
+
+  &__input {
+    width: 600px;
+    // TODO: fix styles
+  }
+}
