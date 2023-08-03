@@ -19,6 +19,12 @@
     }
 
     &__title {
+      max-height: 58px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
       // TODO: use global styles for FF
       font-family: Montserrat, sans-serif;
       font-size: 24px;
