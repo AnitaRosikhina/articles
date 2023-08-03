@@ -2,7 +2,8 @@ import { createAction, props } from "@ngrx/store";
 import { Articles } from "../../../interfaces/acticles";
 
 export const getArticles = createAction(
-  '[Home Page] Get Articles'
+  '[Home Page] Get Articles',
+  props<{ search?: string }>()
 );
 
 export const getArticlesSuccess = createAction(

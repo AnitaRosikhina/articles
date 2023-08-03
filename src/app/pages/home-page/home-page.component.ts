@@ -31,11 +31,11 @@ export class HomePageComponent implements OnInit {
     this.getArticles();
   }
 
-  filter($event: string): void {
-    this.getArticles();
+  filter(search: string): void {
+    this.getArticles(search);
   }
 
-  private getArticles(): void {
-    this.store.dispatch(HomePageActions.getArticles());
+  private getArticles(search?: string): void {
+    this.store.dispatch(HomePageActions.getArticles({ search }));
   }
 }

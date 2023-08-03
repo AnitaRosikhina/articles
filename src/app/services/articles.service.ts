@@ -7,10 +7,16 @@ import { Articles } from "../interfaces/acticles";
 export class ArticlesService {
 
   private readonly API_BASE_URL = 'https://api.spaceflightnewsapi.net/v4'
+
   constructor(private httpClient: HttpClient) {}
 
-  getArticles(): Observable<Articles.Response> {
-    return this.httpClient.get<Articles.Response>(`${this.API_BASE_URL}/articles`);
+  getArticles(search = ''): Observable<Articles.Response> {
+    return this.httpClient.get<Articles.Response>(
+      `${this.API_BASE_URL}/articles`,
+      {
+        params: { search: search },
+      }
+    );
   }
 
   getArticleById(id: number): Observable<Articles.Response> {

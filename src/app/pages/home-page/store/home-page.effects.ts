@@ -10,8 +10,8 @@ export class HomePageEffects {
   getArticles$ = createEffect(() =>
     this.actions$.pipe(
       ofType(HomePageActions.getArticles),
-      switchMap(request =>
-        this.articlesService.getArticles().pipe(
+      switchMap(({ search }) =>
+        this.articlesService.getArticles(search).pipe(
           map(({ count, results }) =>
             HomePageActions.getArticlesSuccess({ count, articles: results })),
           catchError(() => of(HomePageActions.getArticlesError()))
