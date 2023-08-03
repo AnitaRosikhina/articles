@@ -5,6 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { HttpClientModule } from "@angular/common/http";
+import { StoreModule } from "@ngrx/store";
+import { homePageReducer } from "./pages/home-page/store/home-page.reducer";
+import { EffectsModule } from "@ngrx/effects";
+import { HomePageEffects } from "./pages/home-page/store/home-page.effects";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { ArticlesService } from "./services/articles.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +22,11 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     HomePageComponent,
+    StoreModule.forRoot({ homePage: homePageReducer }),
+    EffectsModule.forRoot([HomePageEffects]),
+    StoreDevtoolsModule.instrument()
   ],
+  providers: [ArticlesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
