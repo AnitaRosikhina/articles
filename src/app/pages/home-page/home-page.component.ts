@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HomePageComponentsModule } from "./home-page-components.module";
 import { MatDividerModule } from "@angular/material/divider";
+import { ArticlesService } from "../../services/articles.service";
 
 @Component({
   standalone: true,
@@ -8,6 +9,7 @@ import { MatDividerModule } from "@angular/material/divider";
     HomePageComponentsModule,
     MatDividerModule
   ],
+  providers: [ArticlesService],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })

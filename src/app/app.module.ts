@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,9 +14,9 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     HomePageComponent
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
