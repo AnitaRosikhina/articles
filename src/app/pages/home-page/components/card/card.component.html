@@ -14,12 +14,12 @@
     <p
       class="card__content__title"
       [title]="item.title"
-    >
-      {{item.title}}
-    </p>
-    <p class="card__content__description">
-      {{(item.summary | slice:0:MAX_SUMMARY_LENGTH) + continuationSign}}
-    </p>
+      [innerHtml]="item.title | highlighter:searchText"
+    ></p>
+    <p
+      class="card__content__description"
+      [innerHtml]="(item.summary | slice:0:MAX_SUMMARY_LENGTH) + continuationSign | highlighter:searchText"
+    ></p>
   </mat-card-content>
   <mat-card-actions class="card__actions">
     <button class="card__actions__btn" mat-button>

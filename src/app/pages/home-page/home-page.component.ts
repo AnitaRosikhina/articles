@@ -26,6 +26,9 @@ import { Articles } from "../../interfaces/acticles";
 export class HomePageComponent implements OnInit {
   count$: Observable<number | undefined> = this.store.select(HomePageSelects.selectHomePageCount);
   articles$: Observable<Articles.Item[] | undefined> = this.store.select(HomePageSelects.selectHomePageArticles);
+
+  searchText = '';
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
@@ -33,10 +36,11 @@ export class HomePageComponent implements OnInit {
   }
 
   filter(search: string): void {
+    this.searchText = search
     this.getArticles(search);
   }
 
-  private getArticles(search?: string, ordering?: string): void {
+  private getArticles(search?: string): void {
     this.store.dispatch(HomePageActions.getArticles({ search }));
   }
 }

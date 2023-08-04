@@ -9,6 +9,7 @@ import { Articles } from "../../../../interfaces/acticles";
 })
 export class CardComponent {
   @Input() item!: Articles.Item;
+  @Input() searchText!: string;
 
   readonly MAX_SUMMARY_LENGTH = 100;
 

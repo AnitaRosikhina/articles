@@ -8,6 +8,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { DatePipe, SlicePipe } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
+import { HighlighterPipe } from './pipes/highlighter.pipe';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     FilterComponent,
     TotalCountComponent,
     CardComponent,
+    HighlighterPipe,
   ],
   exports: [
     FilterComponent,

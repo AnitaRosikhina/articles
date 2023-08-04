@@ -9,7 +9,7 @@
       class="container__results__card-wrapper"
       *ngFor="let item of articles$ | async"
     >
-      <app-card [item]="item"/>
+      <app-card [item]="item" [searchText]="searchText"/>
     </div>
   </div>
 </div>
