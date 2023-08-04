@@ -1,3 +1,5 @@
+@import '../../../assets/mixins';
+
 .container {
   padding: 50px 75px;
 
@@ -6,10 +8,7 @@
   }
 
   &__results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(initial, space-between, center, wrap);
     margin-top: 45px;
 
     &__card-wrapper {

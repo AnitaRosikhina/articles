@@ -1,3 +1,6 @@
+@import '../../../../../assets/variables';
+@import '../../../../../assets/mixins';
+
 .card {
   width: 400px;
 
@@ -11,11 +14,18 @@
     padding: 0 25px;
 
     &__date {
-      font-family: Montserrat, sans-serif;
+      @include flex($align-items: center);
       font-size: 14px;
-      color: #363636;
+      color: $primary;
       margin-bottom: 25px;
       line-height: 21px;
+
+      .mat-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        margin-right: 8px;
+      }
     }
 
     &__title {
@@ -25,19 +35,16 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      // TODO: use global styles for FF
-      font-family: Montserrat, sans-serif;
       font-size: 24px;
-      color: #363636;
+      color: $primary;
       margin-bottom: 20px;
       line-height: 29.26px;
     }
 
     &__description {
-      font-family: Montserrat, sans-serif;
       font-size: 16px;
       line-height: 24px;
-      color: #363636;
+      color: $primary;
     }
   }
 
@@ -45,10 +52,15 @@
     padding: 0 25px 25px;
 
     &__btn {
-      margin-top: 20px;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: $font-bold;
       line-height: 24px;
+
+      &-wrapper {
+        margin-top: 20px;
+        @include flex($align-items: center);
+        cursor: pointer;
+      }
     }
   }
 }

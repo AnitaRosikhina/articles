@@ -7,7 +7,6 @@
   >
   <mat-card-content class="card__content">
     <p class="card__content__date">
-      <!-- TODO: download the calendar icon-->
       <mat-icon>calendar_today</mat-icon>
       {{item.published_at | date:'MMMM d, yyyy'}}
     </p>
@@ -22,14 +21,14 @@
     ></p>
   </mat-card-content>
   <mat-card-actions class="card__actions">
-    <button
-      class="card__actions__btn"
-      mat-button
-      (click)="btnClick.emit(item.url)"
-    >
-      Read more
-      <!-- TODO: matSuffix doesn't work-->
-      <mat-icon matButtonIcon matSuffix>arrow_right</mat-icon>
-    </button>
+    <div class="card__actions__btn-wrapper" (click)="btnClick.emit(item.url)">
+      <button
+        class="card__actions__btn"
+        mat-button
+      >
+        Read more
+      </button>
+      <mat-icon>east</mat-icon>
+    </div>
   </mat-card-actions>
 </mat-card>
