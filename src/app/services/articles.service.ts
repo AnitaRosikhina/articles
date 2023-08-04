@@ -10,11 +10,14 @@ export class ArticlesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getArticles(search = ''): Observable<Articles.Response> {
+  getArticles(search = '', ordering = 'title'): Observable<Articles.Response> {
     return this.httpClient.get<Articles.Response>(
       `${this.API_BASE_URL}/articles`,
       {
-        params: { search: search },
+        params: {
+          search,
+          ordering
+        },
       }
     );
   }

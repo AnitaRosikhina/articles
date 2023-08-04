@@ -3,7 +3,7 @@ import { Articles } from "../../../interfaces/acticles";
 
 export const getArticles = createAction(
   '[Home Page] Get Articles',
-  props<{ search?: string }>()
+  props<{ search?: string, ordering?: string }>()
 );
 
 export const getArticlesSuccess = createAction(

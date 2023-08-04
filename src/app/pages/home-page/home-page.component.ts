@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
     this.getArticles(search);
   }
 
-  private getArticles(search?: string): void {
+  private getArticles(search?: string, ordering?: string): void {
     this.store.dispatch(HomePageActions.getArticles({ search }));
   }
 }
