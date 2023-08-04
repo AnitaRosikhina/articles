@@ -2,5 +2,5 @@
 <mat-form-field class="filter__input">
   <mat-label>The most successful IT companies in 2020</mat-label>
   <mat-icon matPrefix>search</mat-icon>
-  <input id="filter" matInput (input)="emitValue($event)">
+  <input id="filter" matInput [formControl]="control">
 </mat-form-field>

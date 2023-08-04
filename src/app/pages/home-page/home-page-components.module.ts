@@ -7,6 +7,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { DatePipe, SlicePipe } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DatePipe, SlicePipe } from "@angular/common";
     MatCardModule,
     MatButtonModule,
     DatePipe,
-    SlicePipe
+    SlicePipe,
+    ReactiveFormsModule
   ]
 })
 export class HomePageComponentsModule { }
