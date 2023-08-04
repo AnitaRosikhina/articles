@@ -7,7 +7,7 @@ import * as HomePageActions from "./store/home-page.actions";
 import * as HomePageSelects from "./store/home-page.selectors";
 import { Observable } from "rxjs";
 import { AppState } from "../../interfaces/store";
-import { AsyncPipe, NgForOf } from "@angular/common";
+import { AsyncPipe, NgForOf, NgIf } from "@angular/common";
 import { Articles } from "../../interfaces/acticles";
 
 @Component({
@@ -16,7 +16,8 @@ import { Articles } from "../../interfaces/acticles";
     HomePageComponentsModule,
     MatDividerModule,
     AsyncPipe,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   providers: [ArticlesService],
   templateUrl: './home-page.component.html',

@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class TotalCountComponent {
   @Input() count?: number | null;
+
+  noResultsText = 'No Results';
+
+  get title(): string {
+    return this.count ? `Results: ${this.count}` : this.noResultsText;
+  }
 }
