@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Articles } from "../../../../interfaces/acticles";
 
 @Component({
@@ -10,6 +10,8 @@ import { Articles } from "../../../../interfaces/acticles";
 export class CardComponent {
   @Input() item!: Articles.Item;
   @Input() searchText!: string;
+
+  @Output() btnClick = new EventEmitter<string>();
 
   readonly MAX_SUMMARY_LENGTH = 100;
 

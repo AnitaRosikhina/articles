@@ -21,8 +21,4 @@ export class ArticlesService {
       }
     );
   }
-
-  getArticleById(id: number): Observable<Articles.Response> {
-    return this.httpClient.get<Articles.Response>(`${this.API_BASE_URL}/articles/${id}`);
-  }
 }

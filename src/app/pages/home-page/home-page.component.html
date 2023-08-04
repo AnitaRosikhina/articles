@@ -9,7 +9,11 @@
       class="container__results__card-wrapper"
       *ngFor="let item of articles$ | async"
     >
-      <app-card [item]="item" [searchText]="searchText"/>
+      <app-card
+        [item]="item"
+        [searchText]="searchText"
+        (btnClick)="navigateToArticle($event)"
+      />
     </div>
   </div>
 </div>

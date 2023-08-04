@@ -22,7 +22,11 @@
     ></p>
   </mat-card-content>
   <mat-card-actions class="card__actions">
-    <button class="card__actions__btn" mat-button>
+    <button
+      class="card__actions__btn"
+      mat-button
+      (click)="btnClick.emit(item.url)"
+    >
       Read more
       <!-- TODO: matSuffix doesn't work-->
       <mat-icon matButtonIcon matSuffix>arrow_right</mat-icon>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { HomePageComponentsModule } from "./home-page-components.module";
 import { MatDividerModule } from "@angular/material/divider";
 import { ArticlesService } from "../../services/articles.service";
@@ -22,6 +22,7 @@ import { Articles } from "../../interfaces/acticles";
   providers: [ArticlesService],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent implements OnInit {
   count$: Observable<number | undefined> = this.store.select(HomePageSelects.selectHomePageCount);
@@ -38,6 +39,10 @@ export class HomePageComponent implements OnInit {
   filter(search: string): void {
     this.searchText = search
     this.getArticles(search);
+  }
+
+  navigateToArticle(url: string): void {
+    window.open(url, "_blank");
   }
 
   private getArticles(search?: string): void {
