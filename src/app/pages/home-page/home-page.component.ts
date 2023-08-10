@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 import { AppState } from "../../interfaces/store";
 import { AsyncPipe, NgForOf, NgIf } from "@angular/common";
 import { Articles } from "../../interfaces/acticles";
+import { Router } from "@angular/router";
 
 @Component({
   standalone: true,
@@ -30,7 +31,10 @@ export class HomePageComponent implements OnInit {
 
   searchText = '';
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getArticles();
@@ -41,8 +45,8 @@ export class HomePageComponent implements OnInit {
     this.getArticles(search);
   }
 
-  navigateToArticle(url: string): void {
-    window.open(url, "_blank");
+  navigateToArticle(id: number): void {
+    this.router.navigate(['article', id]);
   }
 
   private getArticles(search?: string): void {

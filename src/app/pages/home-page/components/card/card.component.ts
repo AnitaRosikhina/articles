@@ -11,7 +11,7 @@ export class CardComponent {
   @Input() item!: Articles.Item;
   @Input() searchText!: string;
 
-  @Output() btnClick = new EventEmitter<string>();
+  @Output() btnClick = new EventEmitter<number>();
 
   readonly MAX_SUMMARY_LENGTH = 100;
 

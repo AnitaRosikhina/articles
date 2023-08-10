@@ -12,6 +12,9 @@ import { HomePageEffects } from "./pages/home-page/store/home-page.effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { ArticlesService } from "./services/articles.service";
 import { environment } from "../environments/environment";
+import { ArticlePageComponent } from './pages/article-page/article-page.component';
+import { articlePageReducer } from "./pages/article-page/store/article-page.reducer";
+import { ArticlePageEffects } from "./pages/article-page/store/article-page.effects";
 
 @NgModule({
   declarations: [
@@ -23,8 +26,15 @@ import { environment } from "../environments/environment";
     AppRoutingModule,
     HttpClientModule,
     HomePageComponent,
-    StoreModule.forRoot({ homePage: homePageReducer }),
-    EffectsModule.forRoot([HomePageEffects]),
+    ArticlePageComponent,
+    StoreModule.forRoot({
+      homePage: homePageReducer,
+      articlePage: articlePageReducer,
+    }),
+    EffectsModule.forRoot([
+        HomePageEffects,
+        ArticlePageEffects
+    ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

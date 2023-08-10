@@ -21,4 +21,8 @@ export class ArticlesService {
       }
     );
   }
+
+  getArticleById(id: number): Observable<Articles.Item> {
+    return this.httpClient.get<Articles.Item>(`${this.API_BASE_URL}/articles/${id}`);
+  }
 }

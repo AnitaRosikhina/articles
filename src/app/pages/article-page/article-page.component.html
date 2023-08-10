@@ -1,0 +1,14 @@
+<div
+  class="article"
+  *ngIf="(article$ | async) as article"
+  [style.background-image]="'url(' + article.image_url + ')'"
+>
+  <div class="article__summary">
+      <h3 class="article__summary__title">{{article.title}}</h3>
+      <p class="article__summary__description">{{article.summary}}</p>
+  </div>
+</div>
+<button class="article__back-btn" mat-button (click)="navigateBackToHomePage()">
+    <mat-icon>west</mat-icon>
+    Back to homepage
+</button>

@@ -1,0 +1,43 @@
+@import '../../../assets/variables';
+
+.article {
+  height: 100%;
+  position: relative;
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &__summary {
+    width: 80vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 35px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 50px;
+      color: $primary;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__back-btn {
+    margin: 50px 0 50px 10vw;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $font-bold;
+    color: $primary;
+  }
+}
